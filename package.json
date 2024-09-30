@@ -1,6 +1,6 @@
 {
     "name": "desktop-capture-js",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": " A Native desktop capture library for Windows that uses NAPI and DirectX libaries to capture desktop real fast",
     "main": "lib/binding.js",
     "scripts": {
