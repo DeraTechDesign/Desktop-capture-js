@@ -1,15 +1,15 @@
 {
     "name": "desktop-capture-js",
     "version": "1.0.0",
-    "description": " A Native desktop capture library that uses NAPI and DirectX libaries to capture desktop real fast",
+    "description": " A Native desktop capture library for Windows that uses NAPI and DirectX libaries to capture desktop real fast",
     "main": "lib/binding.js",
     "scripts": {
-      "install": "node-gyp rebuild"
+        "install": "node-gyp rebuild"
     },
     "gypfile": true,
     "dependencies": {
-      "bindings": "^1.5.0",
-      "node-addon-api": "^8.1.0",
-      "sharp": "^0.33.5"
+        "bindings": "^1.5.0",
+        "node-addon-api": "^8.1.0",
+        "sharp": "^0.33.5"
     }
-  }
+}
