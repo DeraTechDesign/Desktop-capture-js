@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Capture</title>
+</head>
+<body>
+    <canvas id="frameCanvas" width="1920" height="1080"></canvas>
+    <script>
+        const canvas = document.getElementById('frameCanvas');
+        const context = canvas.getContext('2d');
+        const fps = 5;
+        const interval = 1000 / fps;
+
+        async function fetchFrame() {
+            try {
+                const response = await fetch('http://localhost:3006/latestFrame');
+                const blob = await response.blob();
+                const startTime = performance.now();
+                const bitmap = await createImageBitmap(blob);
+                const endTime = performance.now();
+                console.log(`Time taken to create ImageBitmap: ${endTime - startTime} ms`);
+                context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+            } catch (error) {
+                console.error('Error fetching frame:', error);
+            }
+        }
+
+        setInterval(fetchFrame, interval);
+    </script>
+</body>
+</html>

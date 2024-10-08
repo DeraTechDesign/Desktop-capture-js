@@ -11,19 +11,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AB3DACD1-32DB-848F-FE59-16CBB563BC2F}</ProjectGuid>
+    <ProjectGuid>{95BDC754-574D-2F8A-A096-2D757010DBA1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>desktop_capture</RootNamespace>
+    <RootNamespace>desktop_duplication</RootNamespace>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
-    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
   <PropertyGroup Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Locals">
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
   <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props"/>
@@ -48,7 +48,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\include\node;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\src;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\openssl\config;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\openssl\openssl\include;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\uv\include;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\zlib;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\v8\include;..\&quot;C:\Users\omer\Documents\GitHub\Desktop-capture-js\node_modules\node-addon-api&quot;;..\node_modules\node-addon-api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\include\node;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\src;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\openssl\config;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\openssl\openssl\include;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\uv\include;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\zlib;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\v8\include;..\&quot;C:\Users\tuhalf\Documents\GitHub\Desktop-capture-js\node_modules\node-addon-api&quot;;..\node_modules\node-addon-api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:__cplusplus -std:c++17 %(AdditionalOptions)</AdditionalOptions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck>true</BufferSecurityCheck>
@@ -60,7 +60,7 @@
       <OmitFramePointers>false</OmitFramePointers>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=desktop_capture;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NAPI_DISABLE_CPP_EXCEPTIONS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=desktop_duplication;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NAPI_DISABLE_CPP_EXCEPTIONS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <StringPooling>true</StringPooling>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -72,7 +72,7 @@
       <AdditionalOptions>/LTCG:INCREMENTAL %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\omer\\AppData\\Local\\node-gyp\\Cache\\20.15.1\\x64\\node.lib&quot;;gdi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\tuhalf\\AppData\\Local\\node-gyp\\Cache\\18.20.4\\x64\\node.lib&quot;;gdi32.lib</AdditionalDependencies>
       <AdditionalOptions>/LTCG:INCREMENTAL /ignore:4199 %(AdditionalOptions)</AdditionalOptions>
       <DelayLoadDLLs>node.exe;%(DelayLoadDLLs)</DelayLoadDLLs>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -84,13 +84,13 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\include\node;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\src;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\openssl\config;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\openssl\openssl\include;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\uv\include;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\zlib;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\v8\include;..\&quot;C:\Users\omer\Documents\GitHub\Desktop-capture-js\node_modules\node-addon-api&quot;;..\node_modules\node-addon-api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=desktop_capture;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NAPI_DISABLE_CPP_EXCEPTIONS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\include\node;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\src;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\openssl\config;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\openssl\openssl\include;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\uv\include;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\zlib;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\v8\include;..\&quot;C:\Users\tuhalf\Documents\GitHub\Desktop-capture-js\node_modules\node-addon-api&quot;;..\node_modules\node-addon-api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=desktop_duplication;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NAPI_DISABLE_CPP_EXCEPTIONS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\include\node;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\src;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\openssl\config;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\openssl\openssl\include;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\uv\include;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\zlib;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\v8\include;..\&quot;C:\Users\omer\Documents\GitHub\Desktop-capture-js\node_modules\node-addon-api&quot;;..\node_modules\node-addon-api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\include\node;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\src;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\openssl\config;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\openssl\openssl\include;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\uv\include;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\zlib;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\v8\include;..\&quot;C:\Users\tuhalf\Documents\GitHub\Desktop-capture-js\node_modules\node-addon-api&quot;;..\node_modules\node-addon-api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:__cplusplus -std:c++17 %(AdditionalOptions)</AdditionalOptions>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
@@ -104,7 +104,7 @@
       <OmitFramePointers>true</OmitFramePointers>
       <Optimization>Full</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=desktop_capture;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NAPI_DISABLE_CPP_EXCEPTIONS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=desktop_duplication;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NAPI_DISABLE_CPP_EXCEPTIONS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <StringPooling>true</StringPooling>
@@ -117,7 +117,7 @@
       <AdditionalOptions>/LTCG:INCREMENTAL %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\omer\\AppData\\Local\\node-gyp\\Cache\\20.15.1\\x64\\node.lib&quot;;gdi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\tuhalf\\AppData\\Local\\node-gyp\\Cache\\18.20.4\\x64\\node.lib&quot;;gdi32.lib</AdditionalDependencies>
       <AdditionalOptions>/LTCG:INCREMENTAL /ignore:4199 %(AdditionalOptions)</AdditionalOptions>
       <DelayLoadDLLs>node.exe;%(DelayLoadDLLs)</DelayLoadDLLs>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -129,22 +129,22 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\include\node;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\src;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\openssl\config;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\openssl\openssl\include;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\uv\include;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\zlib;C:\Users\omer\AppData\Local\node-gyp\Cache\20.15.1\deps\v8\include;..\&quot;C:\Users\omer\Documents\GitHub\Desktop-capture-js\node_modules\node-addon-api&quot;;..\node_modules\node-addon-api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=desktop_capture;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NAPI_DISABLE_CPP_EXCEPTIONS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\include\node;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\src;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\openssl\config;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\openssl\openssl\include;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\uv\include;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\zlib;C:\Users\tuhalf\AppData\Local\node-gyp\Cache\18.20.4\deps\v8\include;..\&quot;C:\Users\tuhalf\Documents\GitHub\Desktop-capture-js\node_modules\node-addon-api&quot;;..\node_modules\node-addon-api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=desktop_duplication;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NAPI_DISABLE_CPP_EXCEPTIONS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="..\binding.gyp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\desktop_capture.cpp">
-      <ObjectFileName>$(IntDir)\src\desktop_capture.obj</ObjectFileName>
+    <ClCompile Include="..\src\desktop_duplication.cpp">
+      <ObjectFileName>$(IntDir)\src\desktop_duplication.obj</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\src\win_delay_load_hook.cc"/>
+    <ClCompile Include="C:\Users\tuhalf\AppData\Roaming\nvm\v18.20.4\node_modules\npm\node_modules\node-gyp\src\win_delay_load_hook.cc"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="node_modules\node-addon-api\nothing.vcxproj">
-      <Project>{CDB2C62C-F4DD-5459-81E7-4320202C8A8D}</Project>
+      <Project>{81894659-9819-C993-D93A-31216A7FF50D}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

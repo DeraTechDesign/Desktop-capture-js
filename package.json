@@ -9,7 +9,12 @@
     "gypfile": true,
     "dependencies": {
         "bindings": "^1.5.0",
+        "canvas": "^2.11.2",
+        "express": "^4.21.1",
+        "fast-zlib": "^2.0.1",
         "node-addon-api": "^8.1.0",
-        "sharp": "^0.33.5"
+        "sharp": "^0.33.5",
+        "tinybuf": "^1.8.4",
+        "zlib": "^1.0.5"
     }
 }

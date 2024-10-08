@@ -1,11 +1,16 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "desktop_capture", "desktop_capture.vcxproj", "{AB3DACD1-32DB-848F-FE59-16CBB563BC2F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bitmap_processor", "bitmap_processor.vcxproj", "{49697045-9E4E-71B9-BB1B-9BE3941332D2}"
 	ProjectSection(ProjectDependencies) = postProject
-		{CDB2C62C-F4DD-5459-81E7-4320202C8A8D} = {CDB2C62C-F4DD-5459-81E7-4320202C8A8D}
+		{81894659-9819-C993-D93A-31216A7FF50D} = {81894659-9819-C993-D93A-31216A7FF50D}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nothing", "node_modules\node-addon-api\nothing.vcxproj", "{CDB2C62C-F4DD-5459-81E7-4320202C8A8D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "desktop_duplication", "desktop_duplication.vcxproj", "{95BDC754-574D-2F8A-A096-2D757010DBA1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{81894659-9819-C993-D93A-31216A7FF50D} = {81894659-9819-C993-D93A-31216A7FF50D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nothing", "node_modules\node-addon-api\nothing.vcxproj", "{81894659-9819-C993-D93A-31216A7FF50D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(node_modules)", "..\node_modules", "{9D350B9E-06FB-960D-859F-B43C9597383A}"
 EndProject
@@ -13,24 +18,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(node-addon-api)", "..\node
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
 		Release|x64 = Release|x64
+		Debug|x64 = Debug|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AB3DACD1-32DB-848F-FE59-16CBB563BC2F}.Debug|x64.ActiveCfg = Debug|x64
-		{AB3DACD1-32DB-848F-FE59-16CBB563BC2F}.Debug|x64.Build.0 = Debug|x64
-		{AB3DACD1-32DB-848F-FE59-16CBB563BC2F}.Release|x64.ActiveCfg = Release|x64
-		{AB3DACD1-32DB-848F-FE59-16CBB563BC2F}.Release|x64.Build.0 = Release|x64
-		{CDB2C62C-F4DD-5459-81E7-4320202C8A8D}.Debug|x64.ActiveCfg = Debug|x64
-		{CDB2C62C-F4DD-5459-81E7-4320202C8A8D}.Debug|x64.Build.0 = Debug|x64
-		{CDB2C62C-F4DD-5459-81E7-4320202C8A8D}.Release|x64.ActiveCfg = Release|x64
-		{CDB2C62C-F4DD-5459-81E7-4320202C8A8D}.Release|x64.Build.0 = Release|x64
+		{49697045-9E4E-71B9-BB1B-9BE3941332D2}.Release|x64.ActiveCfg = Release|x64
+		{49697045-9E4E-71B9-BB1B-9BE3941332D2}.Release|x64.Build.0 = Release|x64
+		{49697045-9E4E-71B9-BB1B-9BE3941332D2}.Debug|x64.ActiveCfg = Debug|x64
+		{49697045-9E4E-71B9-BB1B-9BE3941332D2}.Debug|x64.Build.0 = Debug|x64
+		{81894659-9819-C993-D93A-31216A7FF50D}.Release|x64.ActiveCfg = Release|x64
+		{81894659-9819-C993-D93A-31216A7FF50D}.Release|x64.Build.0 = Release|x64
+		{81894659-9819-C993-D93A-31216A7FF50D}.Debug|x64.ActiveCfg = Debug|x64
+		{81894659-9819-C993-D93A-31216A7FF50D}.Debug|x64.Build.0 = Debug|x64
+		{95BDC754-574D-2F8A-A096-2D757010DBA1}.Release|x64.ActiveCfg = Release|x64
+		{95BDC754-574D-2F8A-A096-2D757010DBA1}.Release|x64.Build.0 = Release|x64
+		{95BDC754-574D-2F8A-A096-2D757010DBA1}.Debug|x64.ActiveCfg = Debug|x64
+		{95BDC754-574D-2F8A-A096-2D757010DBA1}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AF891C37-E709-9CCC-0D50-0CCCC8CCC563} = {9D350B9E-06FB-960D-859F-B43C9597383A}
-		{CDB2C62C-F4DD-5459-81E7-4320202C8A8D} = {AF891C37-E709-9CCC-0D50-0CCCC8CCC563}
+		{81894659-9819-C993-D93A-31216A7FF50D} = {AF891C37-E709-9CCC-0D50-0CCCC8CCC563}
 	EndGlobalSection
 EndGlobal
