@@ -1,15 +1,23 @@
 {
-    "name": "desktop-capture-js",
-    "version": "1.0.1",
-    "description": " A Native desktop capture library for Windows that uses NAPI and DirectX libaries to capture desktop real fast",
-    "main": "lib/binding.js",
-    "scripts": {
-        "install": "node-gyp rebuild"
-    },
-    "gypfile": true,
-    "dependencies": {
-        "bindings": "^1.5.0",
-        "node-addon-api": "^8.1.0",
-        "sharp": "^0.33.5"
-    }
+  "name": "desktop-capture-js",
+  "version": "0.1.0",
+  "description": "Native efficient Windows screen sharing for Node.js using Desktop Duplication (dirty rects updates like RDP)",
+  "main": "index.js",
+  "scripts": {
+    "install": "node -e \"process.exit(0)\"",
+    "build": "node-gyp rebuild",
+    "rebuild": "node-gyp rebuild",
+    "clean": "node-gyp clean",
+    "start:server": "node examples/server.js"
+  },
+  "dependencies": {
+    "node-addon-api": "^7.0.0",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "node-gyp": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }

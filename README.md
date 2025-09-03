@@ -1,134 +1,38 @@
-# Desktop-capture-js
+Desktop Capture JS (Windows)
 
-A native desktop capture library for Node.js that leverages N-API and DirectX libraries to capture desktop on Windows rapidly and efficiently. Ideal for applications requiring real-time screen capturing, such as screenshot taking, streaming, recording, or automated testing tools.
+Native, efficient Windows screen sharing for Node.js using the DXGI Desktop Duplication API. Instead of encoding video, it streams only dirty regions (rect updates) similar to RDP.
 
-## Table of Contents
+Features
+- Native C++ addon via N-API (node-addon-api)
+- Uses Desktop Duplication for dirty rects and low CPU overhead
+- Sends raw BGRA pixel updates for changed regions
+- Example WebSocket server + browser client that paints updates on a canvas
 
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Capturing a Frame as Buffer](#capturing-a-frame-as-buffer)
-  - [Capturing a Frame as JPEG](#capturing-a-frame-as-jpeg)
-- [API Reference](#api-reference)
-- [Examples](#examples)
+Requirements (Windows)
+- Node.js 18+
+- Visual Studio 2019/2022 Build Tools with C++ workload
+- Windows 10/11 with Desktop Duplication support
 
-## Installation
+Install & Build
+- npm install
+- npm run build
 
-Ensure you have [Node.js](https://nodejs.org/) installed. Then, install the package via npm:
+Run Example
+- npm run start:server
+- Open http://localhost:8080 in a browser
 
-~~~bash
-npm install desktop-capture-js
-~~~
+API
+const { DesktopCapturer } = require('desktop-capture-js');
+const cap = new DesktopCapturer({ outputIndex: 0, maxFps: 30, withCursor: false });
+cap.on('init', ({ width, height, pixelFormat, bytesPerPixel }) => { /* ... */ });
+cap.on('update', ({ width, height, rects }) => {
+  // rects: [{ x, y, w, h, data: Buffer(BGRA) }]
+});
+cap.start();
+cap.stop();
 
-## Usage
+Notes
+- Pixel format is BGRA (32-bit). The example client converts to RGBA for Canvas.
+- Dirty rects only; move rects and cursor shape are not yet applied.
+- For production, consider packing multiple rects into a single frame and applying move rects for efficiency.
 
-First, require the library in your project:
-
-~~~javascript
-const { captureFrameAsBuffer, captureFrameAsJpeg } = require('desktop-capture-js');
-~~~
-
-### Capturing a Frame as Buffer
-
-Capture the current desktop frame as a raw buffer along with its dimensions.
-
-~~~javascript
-const result = captureFrameAsBuffer();
-
-if (result.status === 1) {
-    const frameBuffer = result.message;
-    const width = result.width;
-    const height = result.height;
-    // Process the frame buffer as needed
-} else {
-    console.error('Capture failed:', result.message);
-}
-~~~
-
-### Capturing a Frame as JPEG
-
-Capture the current desktop frame and convert it to a JPEG image. You can specify the quality (default is 80).
-
-~~~javascript
-captureFrameAsJpeg(90)
-    .then(result => {
-        if (result.status === 1) {
-            const jpegBuffer = result.message;
-            const width = result.width;
-            const height = result.height;
-            // Save or process the JPEG buffer as needed
-        } else {
-            console.error('No new frame available');
-        }
-    })
-    .catch(error => {
-        console.error('Capture failed:', error.message);
-    });
-~~~
-
-## API Reference
-
-### `captureFrameAsBuffer()`
-
-Captures the current desktop frame as a raw buffer.
-
-**Returns:**
-
-- An object containing:
-  - `status` (`number`): `1` for success, `0` for failure.
-  - `message` (`Buffer` | `string`): The frame data buffer on success, or an error message.
-  - `width` (`number`): Width of the captured frame.
-  - `height` (`number`): Height of the captured frame.
-
-### `captureFrameAsJpeg(quality)`
-
-Captures the current desktop frame and converts it to a JPEG image.
-
-**Parameters:**
-
-- `quality` (`number`, optional): JPEG quality (1-100). Defaults to `80`.
-
-**Returns:**
-
-- A `Promise` that resolves to an object containing:
-  - `status` (`number`): `1` for success, `0` for failure.
-  - `message` (`Buffer` | `string`): The JPEG data buffer on success, or an error message.
-  - `width` (`number`): Width of the captured frame.
-  - `height` (`number`): Height of the captured frame.
-
-## Examples
-
-### Save Captured Frame as JPEG
-
-~~~javascript
-const fs = require('fs');
-const { captureFrameAsJpeg } = require('desktop-capture-js');
-
-captureFrameAsJpeg(85)
-    .then(result => {
-        if (result.status === 1) {
-            fs.writeFileSync('screenshot.jpg', result.message);
-            console.log(`Screenshot saved: ${result.width}x${result.height}`);
-        } else {
-            console.error('No new frame available');
-        }
-    })
-    .catch(error => {
-        console.error('Error capturing frame:', error.message);
-    });
-~~~
-
-### Stream Desktop Frames
-
-~~~javascript
-const { captureFrameAsBuffer } = require('desktop-capture-js');
-
-setInterval(() => {
-    const result = captureFrameAsBuffer();
-    if (result.status === 1) {
-        // Stream the frame buffer to a server or process it
-        console.log(`Captured frame: ${result.width}x${result.height}`);
-    } else {
-        console.warn(result.message);
-    }
-}, 17); // Capture in 60 fps
-~~~

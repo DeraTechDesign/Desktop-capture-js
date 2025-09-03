@@ -2,28 +2,30 @@
   "targets": [
     {
       "target_name": "desktop_capture",
-      "sources": [ "src/desktop_capture.cpp" ],
-      "libraries": [ "-lgdi32" ],
+      "sources": [
+        "native/src/addon.cc",
+        "native/src/capturer.cpp"
+      ],
       "include_dirs": [
-        "<!(node -p \"require('node-addon-api').include\")",
-        "<!(node -p \"require('node-addon-api').include_dir\")",
+        "<!@(node -p \"require('node-addon-api').include\")",
+        "native/src"
       ],
-      "dependencies": [
-        "<!(node -p \"require('node-addon-api').gyp\")"
-      ],
-      "cflags!": [ "-fno-exceptions" ],
-      "cflags_cc!": [ "-fno-exceptions" ],
-      "conditions": [
-        [ "OS=='win'", {
-          "libraries": [ "-lgdi32" ]
-        }]
-      ],
-      "defines": [ "NAPI_DISABLE_CPP_EXCEPTIONS" ],
-      "cflags_cc": [ "-std=c++17" ],
+      "defines": ["NAPI_DISABLE_CPP_EXCEPTIONS"],
       "msvs_settings": {
-        "VCCLCompilerTool": { "ExceptionHandling": 1 }
+        "VCCLCompilerTool": {
+          "ExceptionHandling": 0,
+          "AdditionalOptions": [ "/EHsc" ]
+        }
       },
-      "defines": [ "NAPI_DISABLE_CPP_EXCEPTIONS" ]
+      "conditions": [
+        ["OS=='win'", {
+          "libraries": [
+            "d3d11.lib",
+            "dxgi.lib",
+            "dxguid.lib"
+          ]
+        }]
+      ]
     }
   ]
 }
