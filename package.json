@@ -8,9 +8,11 @@
     "build": "node-gyp rebuild",
     "rebuild": "node-gyp rebuild",
     "clean": "node-gyp clean",
-    "start:server": "node examples/server.js"
+    "start:server": "node examples/server.js",
+    "bind": "node examples/bind.js"
   },
   "dependencies": {
+    "diodejs": "^0.2.2",
     "node-addon-api": "^7.0.0",
     "ws": "^8.17.0"
   },
